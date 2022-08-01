@@ -22,8 +22,11 @@ const SignIn = () => {
     e.preventDefault();
     e.stopPropagation();
     try {
-      await submitSignIn(dispatch,formValues.email,formValues.password);
+     const ok = await submitSignIn(dispatch,formValues.email,formValues.password);
+     if(ok){
       Navigator('/login');
+     }
+      
     } catch (ex) {
       console.log(ex);
     }

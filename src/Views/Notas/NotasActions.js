@@ -27,29 +27,47 @@ export const getNotesDocuments = async (dispatch, page, limit) => {
 }
 
 export const addNote = async (dispatch,{description,title,keyword} ) => {
-  try {
+ 
     dispatch({ type: NOTES_LOAD, payload: null });
-    const {data} = await postNew(title,description,keyword);
-    dispatch({ type: NOTE_ADD_SUCCESS, payload: data });
-    return true;
-  } catch (ex) {
-    console.log("notesActions", ex);
-    dispatch({ type: NOTE_ADD_FAILED, payload: "Error al guardar la nota" });
-    return false;
-  }
+    const ok = await postNew(title,description,keyword)
+    .then((response) => {
+      const data = response;
+      dispatch({ type: NOTE_ADD_SUCCESS, payload: data });
+      console.log(response)
+      return true;
+    }).catch((error) => {
+      if (error.response) {
+        console.log(error.response.data); // => the response payload 
+        dispatch({ type: NOTE_ADD_FAILED, payload: error.response.data.error });
+        return false;
+      }
+    });
+    return ok;
+ 
 }
 
 export const updateNote = async (dispatch,{description,title,keyword,id} ) => {
-  try {
-    dispatch({ type: NOTES_LOAD, payload: null });
-    const {data} = await putNote(title,description,keyword,id);
-    dispatch({ type: NOTE_ADD_SUCCESS, payload: data });
-    return true;
-  } catch (ex) {
-    console.log("notesActions", ex);
-    dispatch({ type: NOTE_UPDATE_FAILED, payload: "Error al Editar la nota" });
-    return false;
-  }
+  
+    
+   const ok = await putNote(title,description,keyword,id)
+    .then((response) => {
+      dispatch({ type: NOTES_LOAD, payload: null });
+      const data = response;
+      dispatch({ type: NOTE_UPDATE_SUCCESS, payload: data });
+      console.log("Response",response);
+      return true;
+    }).catch((error) => {
+      if (error.response) {
+        console.log(error.response.data); // => the response payload 
+        dispatch({ type: NOTE_UPDATE_FAILED, payload: error.response.data.error });
+        return false;
+      }
+      return false;
+    });
+
+    return ok;
+
+ 
 }
 
 export const deleteNote = async (dispatch,{id} ) => {

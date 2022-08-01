@@ -74,24 +74,31 @@ const NotasForm = () => {
     let ok = false;
     if (action === "UPD") {
       ok = await updateNote(dispatch, { ...formData, id });
-      alert("Nota Actualizada con éxito")
+      alert(ok);
+      if (ok) {
+        alert("Nota actualizada con éxito");
+      }
+      
     }else if(action === "DEL") {
       ok = await deleteNote(dispatch, { id:id });
-      alert("Nota Eliminada con éxito");
+      if (ok) {
+        alert("Nota Eliminada con éxito");
+      }
+    
     }
     else {
       ok = await addNote(dispatch, { ...formData });
-      alert("Nota Guardada con éxito");
+      if (ok) {
+        alert("Nota Guardada con éxito");
+      }
     }
 
     // const ok = false;
-    if (ok) {
+    if (ok || ok === undefined) {
       getNotesDocuments(dispatch, page, pageLimit);
       navigate("/home");
     }
-    else {
-      alert({ documentError });
-    }
+  
   }
 
   const onCancelClick = (e) => {
