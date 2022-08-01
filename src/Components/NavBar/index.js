@@ -30,7 +30,12 @@ const NavBar = ({ title }) => {
   const onAcercaDeClick =  async (e) => {
     e.preventDefault();
     e.stopPropagation();
-    alert(e.target.value);
+    try {
+      Navigator('/MiPerfil');
+    } catch (ex) {
+      console.log("error click", ex);
+
+    }
   }
 
   const onHomeClick = async (e) => {
@@ -69,7 +74,7 @@ const NavBar = ({ title }) => {
               <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
               {linkHome && <li><button onClick={onHomeClick}>Menú Principal</button></li>}
                 <li><button onClick={onNewNoteClick}>Nueva Nota</button></li>
-                <li><button onClick={onAcercaDeClick} value="1">Acerca de</button></li>
+                <li><button onClick={onAcercaDeClick} >Mi Perfil</button></li>
                 <li><button onClick={onCerrarSesionClick}>Cerrar Sesión</button></li>
               </ul>
             </>
