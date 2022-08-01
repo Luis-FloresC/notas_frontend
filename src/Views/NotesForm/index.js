@@ -74,7 +74,6 @@ const NotasForm = () => {
     let ok = false;
     if (action === "UPD") {
       ok = await updateNote(dispatch, { ...formData, id });
-      alert(ok);
       if (ok) {
         alert("Nota actualizada con éxito");
       }
