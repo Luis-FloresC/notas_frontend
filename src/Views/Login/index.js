@@ -30,7 +30,7 @@ const Login = () => {
   const onSignInClick = async (e) => {
     e.preventDefault();
     e.stopPropagation();
-   // Navigator('/signIn');
+    Navigator('/signIn');
   }
   const onLoginClick = async (e) => {
     e.preventDefault();
