@@ -5,12 +5,10 @@ import app from './app';
 import security from './security';
 import notes from './Notas';
 
-
 const rootReducer = combineReducers({
     app,
     security,
-    notes,
-   
+    notes
 });
 
 export default rootReducer;
