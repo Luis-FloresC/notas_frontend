@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Proyecto Aplicación de Notas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+La App se encargara de mostrar la interfaz grafica al usuario: 
+* Usuarios: Se encargara de crear,editar y eliminar notas
+* Seguridad: Se encargara de proteger la información del usuario
+* Notas: se muestran en un listado clasico donde muestra informacion como titulo,descripcion y palabras claves de las notas
 
-## Available Scripts
+## Comenzando 🚀
 
-In the project directory, you can run:
+Descargar la Rama de Master y entrar a la terminal en la ruta de la carpeta del proyecto y asegurarse de tener instalado node js y npm instalados en su ordenador, Luego ejecutar el comando npm install para actualizar los paquetes del proyecto.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Pre-requisitos 📋
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Tener acceso a su cuenta de mongoDb para general el link de conexión y crear una base de datos con el nombre "NotesDatabase" y crear 2 colecciones llamadas "Uusarios" y "Notas"
 
-### `npm test`
+luego tenemos que copiar el archivo .env_Template y cambiar su nombre a .env 
+luego configuramos las variables siguientes:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* REACT_APP_API_HOST= Dirección ip de la pc que esta corriendo la api o usar localhost
+* REACT_APP_API_TOKEN= Api key para el mejor funcionamiento de la app
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Luego de seguir con lo pasos anteriores en la terminar de la carpeta base ejecutar cualquiera de los siguientes comandos:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Construido con 🛠️
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* [React Js](https://es.reactjs.org/) 
+* [Tailwind css](https://tailwindcss.com/) - Framework css
+* [Axios](https://github.com/axios/axios) - Controlador de peticiones
+* [Daisy Ui](https://daisyui.com/) - Plugin 
 
-## Learn More
+## Versionado 📌
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Usamos [GitHub](https://github.com/) para el versionado. Para todas las versiones disponibles, 
+mira los [Notas-Frontend](https://github.com/Luis-FloresC/notas_frontend.git).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Autores ✒️
 
-### Code Splitting
+* **David Mendoza** - *0601-1998-00243* - [dmendoza2](https://github.com/dmendoza2)
+* **Diego Lopez** - *0801-1998-11745* - [Dlopz98](https://github.com/Dlopz98)
+* **Gerson Martinez** - *1501-1999-01715* - [javier8159](https://github.com/javier8159)
+* **José Guillen** - *0801-1999-18261* - [JG20108](https://github.com/JG20108)
+* **Laura Galeano** - *0704-1999-00809* - [LeGaleano2](https://github.com/LeGaleano2)
+* **Luis Flores** - *0703-2000-03793* - [LuisFlores-C](https://github.com/Luis-FloresC)
+* **Marlen Cartagena** - *1318-2001-00003* - [MarlenCartagena](https://github.com/MarlenCartagena)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+También puedes mirar la lista de todos los [contribuyentes](https://github.com/Luis-FloresC/notas_frontend/graphs/contributors)
+quienes han participado en este proyecto. 
 
-### Making a Progressive Web App
+## Expresiones de Gratitud 🎁
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* Gracias al Ingeniero [Orlando Betancourth](https://github.com/obetancourth) por compartir su conocimiento con nosotros 😎
+* Comenta a otros sobre este proyecto 📢
+* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
+* Da las gracias públicamente 🤓.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
