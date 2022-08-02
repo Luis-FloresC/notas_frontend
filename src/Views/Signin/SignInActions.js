@@ -7,9 +7,9 @@ const SIGNIN_CLEAN_ERROR = "SIGNIN_CLEAN_ERROR";
 
 export const submitSignIn = async (dispatch, email, password) => {
 
-  try {
+  
     dispatch({ type: SIGNIN_LOADING, payload: null });
-    await getSignIn(email, password)
+   const ok =  await getSignIn(email, password)
       .then((response) => {
         const data = response;
         dispatch({ type: SIGNIN_SUCCESS, payload: data });
@@ -22,11 +22,7 @@ export const submitSignIn = async (dispatch, email, password) => {
           return false;
         }
       });
-  } catch (ex) {
-    console.log(ex);
-    dispatch({ type: SIGNIN_FAILED, payload: 'Error al registrar usuario!' });
-    throw Error("Error al registrar usuario!");
-  }
+      return ok;
 }
 
 export const cleanSignInError = (dispatch) => {

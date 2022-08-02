@@ -24,6 +24,7 @@ const SignIn = () => {
     try {
      const ok = await submitSignIn(dispatch,formValues.email,formValues.password);
      if(ok){
+      alert("Usuario registrado correctamente...");
       Navigator('/login');
      }
       

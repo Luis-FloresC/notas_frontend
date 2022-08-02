@@ -47,9 +47,7 @@ const SignInUx = ({
                   placeholder="Ingrese su contraseña"
                 />
                 <div className="form-control">
-                  <label className="label">
-                    <button className="label-text-alt link link-hover">Olvido su contraseña?</button>
-                  </label>
+
 
                 </div>
                 <div className="form-control mt-6">
